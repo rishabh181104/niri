@@ -1,5 +1,7 @@
 input {
     keyboard {
+      repeat-delay 200
+      repeat-rate 60
         xkb {
             layout "us"
         }
@@ -8,9 +10,11 @@ input {
     touchpad {
         tap
         natural-scroll
+        accel-speed 0.1
     }
 
     mouse {
+      accel-speed 0.1
     }
 
     trackpoint {
@@ -25,7 +29,7 @@ input {
 }
 
 layout {
-    gaps 10
+    gaps 4
     center-focused-column "always"
     preset-column-widths {
         proportion 0.5
@@ -34,6 +38,7 @@ layout {
     }
     default-column-width { proportion 0.50000; }
     focus-ring {
+      off
         width 4
 
         // Colors can be set in a variety of ways:
@@ -49,7 +54,7 @@ layout {
     }
     border {
         off
-        width 4
+        width 2
         active-color "#ffc87f"
         inactive-color "#505050"
 
@@ -83,7 +88,7 @@ spawn-at-startup "jamesdsp"
 // spawn-at-startup "waybar"
 screenshot-path "~/Screenshots from %Y-%m-%d %H-%M-%S.png"
 animations {
-    slowdown 1.0000
+    slowdown 0.5
 }
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
