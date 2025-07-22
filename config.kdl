@@ -69,8 +69,8 @@ layout {
     struts {
     }
 }
-// spawn-at-startup "waybar -config ~/.config/niri/waybar"
-spawn-at-startup "waybar"
+// spawn-at-startup "waybar"
+spawn-at-startup "waybar --config ~/.config/niri/waybar/config.jsonc --style ~/.config/niri/waybar/style.css"
 spawn-at-startup "swww-daemon --format xrgb"
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
@@ -98,8 +98,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+b hotkey-overlay-title="To open Browser: Zen" { spawn "zen-browser"; }
-    Mod+s hotkey-overlay-title="To launch Spotify: Spotify" { spawn "sh -c 'LD_PRELOAD=/usr/lib/spotify-adblock.so spotify'"; }
+    Mod+b hotkey-overlay-title="To open Browser: Zen" { spawn "zen-browser" "--enable-features=UseOzonePlatform" "--ozone-platform=wayland"; }
+    Mod+s hotkey-overlay-title="To launch Spotify: Spotify" { spawn "LD_PRELOAD=/usr/lib/spotify-adblock.so" "spotify"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
