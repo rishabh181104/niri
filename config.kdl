@@ -1,7 +1,7 @@
 input {
     keyboard {
         xkb {
-            layout "us,ru"
+            layout "us"
         }
         numlock
     }
@@ -81,7 +81,7 @@ spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "jamesdsp"
 // spawn-at-startup "waybar"
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Screenshots from %Y-%m-%d %H-%M-%S.png"
 animations {
     slowdown 1.0000
 }
@@ -106,7 +106,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+space hotkey-overlay-title="Run an Application: fuzzel" { spawn "rofi" "-show" "drun"; }
     Mod+b hotkey-overlay-title="To open Browser: Zen" { spawn "zen-browser" "--enable-features=UseOzonePlatform" "--ozone-platform=wayland"; }
     Mod+s hotkey-overlay-title="To launch Spotify: Spotify" { spawn "LD_PRELOAD=/usr/lib/spotify-adblock.so" "spotify"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
