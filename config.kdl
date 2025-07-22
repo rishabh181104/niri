@@ -69,12 +69,21 @@ layout {
     struts {
     }
 }
-// spawn-at-startup "waybar"
-spawn-at-startup "waybar --config ~/.config/niri/waybar/config.jsonc --style ~/.config/niri/waybar/style.css"
 spawn-at-startup "swww-daemon --format xrgb"
+spawn-at-startup "bash $HOME/.config/niri/waybar/scripts/refresh_waybar.sh"
+spawn-at-startup "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+spawn-at-startup "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+spawn-at-startup "nm-applet"
+spawn-at-startup "blueman-applet"
+spawn-at-startup "swaync"
+spawn-at-startup "wl-clipboard"
+spawn-at-startup "wl-paste --type text --watch cliphist store"
+spawn-at-startup "wl-paste --type image --watch cliphist store"
+spawn-at-startup "jamesdsp"
+// spawn-at-startup "waybar"
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
-    slowdown 1.9
+    slowdown 1.0000
 }
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#

@@ -7,4 +7,4 @@ killall waybar
 sleep 1
 
 # Restart Waybar
-waybar &
+waybar --config $HOME/.config/niri/waybar/config.jsonc --style $HOME/.config/niri/waybar/style.css &
